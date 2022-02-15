@@ -19,13 +19,25 @@ console.log(total);
 
 // 3. remove the duplicate items in the array.
 console.log("===Q3: Remove duplicate from the array====")
-const nonDuplicatedArray = [];
+//Method 1
+console.log("....Method 1....")
+const nonDuplicatedArray1 = [];
 numArray.forEach(element => {
-    if (!nonDuplicatedArray.includes(element)){
-        nonDuplicatedArray.push(element)}});
+    if (!nonDuplicatedArray1.includes(element)){
+        nonDuplicatedArray1.push(element)}});
+console.log(nonDuplicatedArray1);
 
-// sorted nonDuplicatedArray before displaying so that it is easy to read
-console.log(nonDuplicatedArray.sort((a,b)=>a-b));
+
+// Method 2
+console.log("....Method 2....")
+const nonDuplicatedArray2 = [...new Set(numArray)];
+console.log(nonDuplicatedArray2);
+
+
+//Method 3
+console.log("....Method 3....")
+const nonDuplicatedArray3 = numArray.filter((element,index) => numArray.indexOf(element) === index);
+console.log(nonDuplicatedArray3);
 
 
 // 4.  make 2 sub arraySpliced, one with the even numbers and another one with the odd numbers.
